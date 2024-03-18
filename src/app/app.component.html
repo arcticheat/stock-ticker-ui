@@ -5,10 +5,9 @@
       <h1> Stocks Viewer</h1>
     </mat-toolbar>
   </header>
-  <mat-sidenav-container class="main-content">
-    <mat-sidenav class="sidenav" mode="side" opened>side nav</mat-sidenav>
-    <mat-sidenav-content>Main</mat-sidenav-content>
-  </mat-sidenav-container>
+  <section class="content">
+    <router-outlet></router-outlet>
+  </section> 
   <footer>
     <mat-toolbar>
       footer

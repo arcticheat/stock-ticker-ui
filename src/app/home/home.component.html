@@ -1,1 +1,10 @@
-<p>home works!</p>
+ <mat-sidenav-container class="main-content">
+    <!-- <mat-sidenav class="sidenav" mode="side" opened>side nav</mat-sidenav> -->
+    <mat-sidenav-content>
+        <mat-form-field>
+            <mat-label>Filter by Stock Symbol</mat-label>
+            <input matInput type="text">
+        </mat-form-field>
+        <app-stock-card *ngFor="let endOfDayData of endOfDayDataList" [endOfDayData]="endOfDayData">a card</app-stock-card>
+    </mat-sidenav-content>
+</mat-sidenav-container>
