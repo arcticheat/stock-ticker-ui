@@ -1,13 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 import { StockService } from '../services/stock/stock.service';
 import { IntradayData } from '../models/intraday-data';
 
 @Component({
   selector: 'app-intraday-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatCardModule],
   templateUrl: './intraday-details.component.html',
   styleUrl: './intraday-details.component.sass'
 })

@@ -1,2 +1,8 @@
-<p>intraday-details works! {{ symbol }} </p>
-<p *ngFor="let intradayData of intradayDataList">{{intradayData.date}}, high {{intradayData.high}}, low {{intradayData.low}}</p>
+<h1>{{symbol}}</h1>
+<mat-card *ngFor="let intradayData of intradayDataList">
+    <mat-card-header>
+        <mat-card-title>{{intradayData.date}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        high: {{intradayData.high}}, low: {{intradayData.low}}
+    </mat-card-content>
