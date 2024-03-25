@@ -20,6 +20,8 @@ export class IntradayDetailsComponent {
 
   constructor() {
     this.symbol = this.router.snapshot.params['symbol'];
-    this.intradayDataList = this.stockService.getIntradayDataListBySymbol(this.symbol);
+    this.stockService.getIntradayData([this.symbol]).then((intradayDataList: IntradayData[]) => {
+      this.intradayDataList = intradayDataList;
+    });
   }
 }

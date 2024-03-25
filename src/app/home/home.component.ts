@@ -14,10 +14,13 @@ import { StockService } from '../services/stock/stock.service';
   styleUrl: './home.component.sass'
 })
 export class HomeComponent {
+   stocks: string[] = ['NVDA', 'AAPL', 'MSFT', 'AMZN', 'GOOG', 'META', 'COF']
    endOfDayDataList: EndOfDayData[] = [];
    stockService: StockService = inject(StockService);
 
    constructor() {
-    this.endOfDayDataList = this.stockService.getEndOfDayDataList();
+    this.stockService.getEndOfDayData(this.stocks).then((endOfDayDataList: EndOfDayData[]) => {
+      this.endOfDayDataList = endOfDayDataList
+    });
    }
 }

@@ -1,8 +1,11 @@
 <h1>{{symbol}}</h1>
-<mat-card *ngFor="let intradayData of intradayDataList">
-    <mat-card-header>
-        <mat-card-title>{{intradayData.date}}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        high: {{intradayData.high}}, low: {{intradayData.low}}
-    </mat-card-content>
+@for (intradayData of intradayDataList; track intradayData.symbol) {
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{intradayData.date}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            high: {{intradayData.high}}, low: {{intradayData.low}}
+        </mat-card-content>
+    </mat-card>
+}

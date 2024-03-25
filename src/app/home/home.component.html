@@ -5,6 +5,8 @@
             <mat-label>Filter by Stock Symbol</mat-label>
             <input matInput type="text">
         </mat-form-field>
-        <app-stock-card *ngFor="let endOfDayData of endOfDayDataList" [endOfDayData]="endOfDayData">a card</app-stock-card>
+        @for (endOfDayData of endOfDayDataList; track endOfDayData.symbol) {
+            <app-stock-card [endOfDayData]="endOfDayData">a card</app-stock-card>
+        }
     </mat-sidenav-content>
 </mat-sidenav-container>
